@@ -19,7 +19,7 @@ const signInGoogle = () => {
             var token = credential.accessToken;
             // The signed-in user info.
             // var to store in cookies
-            var user = result.user;
+            var user = result.user.uid;
             // store in cookies
             // sessionStorage.setItem("KEY", "VALUE");
             sessionStorage.setItem("userId", user);
@@ -148,5 +148,5 @@ const signInAccount = () => {
     signUpButton.addEventListener('click', showSignUp);
 }
 
-//signInGoogleButton.addEventListener('click', signInGoogle);
+signInGoogleButton.addEventListener('click', signInGoogle);
 signInButton.addEventListener('click', signInAccount);

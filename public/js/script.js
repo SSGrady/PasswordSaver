@@ -6,6 +6,7 @@
 console.log("script running");
 
 const userId = sessionStorage.getItem("userId");
+console.log(userId);
 
 var SHA512 = new Hashes.SHA512;
 

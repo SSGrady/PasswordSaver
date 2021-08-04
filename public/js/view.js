@@ -1,6 +1,6 @@
 console.log("view.js running!");
 
-var userId = sessionStorage.getItem("user");
+var userId = sessionStorage.getItem("userId");
 
 const SHA512 = new Hashes.SHA512();
 
