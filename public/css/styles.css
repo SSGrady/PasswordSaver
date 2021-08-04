@@ -20,9 +20,6 @@ nav, nav::after, .navbar-item{
     background-color: #212529 !important;
     color: hsl(0,0%,98%) !important;
 }
-.navbar-item{
-    padding: 8px 128px !important;
-}
 
 .navbar-burger{
     top: 46px;
@@ -39,8 +36,8 @@ a, a::before, a::after{
 
 
 #navMenu.navbar-menu.is-active{
-        background-color: #212529 !important;
-    }
+    background-color: #212529 !important;
+}
 .center {
   margin: auto;
   width: 50%;
@@ -52,6 +49,8 @@ body{
   margin:0;
   padding: 0;
   line-height: 1.3;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 100 !important;
 }
 
 button, button:hover{
@@ -60,6 +59,8 @@ button, button:hover{
   cursor: pointer;
   background:  #0d6efd !important;
   color: hsl(0, 0%, 100%) !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 100 !important;
 }
 
 .textarea{
@@ -100,6 +101,12 @@ a.lgo-nm:hover{
     color: #0d6efd !important;
 }
 
+div.techGuy{
+    background-image: url("https://i.ibb.co/2gdHBqr/new-CSSIExhibit-A.jpg");
+    margin-left: 0;
+    margin-right: 0;
+}
+
 /* SPACER SPACER SPACER */
 :root{
 --bs-blue: #0d6efd;
@@ -123,3 +130,69 @@ a.lgo-nm:hover{
     --bs-danger: #dc3545;
     --bs-light: #f8f9fa;
     --bs-dark: #212529;}
+
+    .auth-link{
+        background-color: white !important;
+        color: #212529;
+    }
+
+    .auth-link:hover{
+        color: #0d6efd !important;
+    }
+
+    .auth-button:hover{
+        background-color: #0d6efd !important;
+        color: white !important;
+    }
+
+    .signIn-button{
+        margin-top: 30px;
+        background-color: #212529 !important;
+    }
+
+    .signIn-button:hover{
+        background-color: #0d6efd;
+        color: white;
+    }
+
+    .authField{
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
+    .site-footer{
+        background-color: #212529;
+        color: white;
+    }
+
+    .footer-link{
+        background-color: #212529;
+        color: #0d6efd;
+    }
+
+    .footer-link:hover{
+        color: white;
+    }
+
+    .title, .subtitle{
+        font-family: "Montserrat", sans-serif;
+        font-weight: 100;
+    }
+
+    .label, .textarea, .input{
+        font-family: "Montserrat", sans-serif;
+        font-weight: 100;
+    }
+
+    .font{
+        font-family: "Montserrat", sans-serif;
+        font-weight: 100 !important;
+    }
+
+    #accessKeyInput{
+        border-color: transparent !important;
+    }
+
+    #accessKeyInput:hover{
+        border-color: #0d6efd !important;
+    }
