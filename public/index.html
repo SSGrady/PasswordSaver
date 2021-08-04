@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>savet</title>
+
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script defer src="/__/firebase/8.3.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.3.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.3.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <nav class="navbar is-primary">
+        <div class="container">
+            <div class="navbar-brand">
+                <img class="cropped" src="https://i.ibb.co/FwZvsk7/Screen-Shot-2021-08-02-at-10-55-04-PM-removebg-preview.png" alt="logo">                    
+                <span class="navbar-burger burger" data-target="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </div>
+        </div>
+    </nav>
+    <section class="hero is-fullheight is-default is-bold">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="columns is-vcentered">
+                    <div class="column is-6 is-offset-3">
+                        <h1 class="title is-2">
+                            Welcome to savet!
+                        </h1>
+                        <h2 class="subtitle is-4">
+                            Log in to view your notes or create a new one. 
+                        </h2>
+                        <br>
+                        <p id="signIn" class="has-text-centered">
+                            <a id="signInButton" class="button is-medium is-info is-outlined">
+                                Sign In
+                            </a>
+                            <br></br>
+                            <!-- <a id="signInGoogleButton">
+                                Or, sign in with Google
+                            </a> -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script defer src="https://cdn.rawgit.com/h2non/jsHashes/master/hashes.js"></script>
+    <script defer src="js/signIn.js"></script>
+  </body>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by 
+                         <a class= "lgo-nm" href="#">savet</a>. Made with Bulma by Jeremy Thomas - Source Code Licensed MIT. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</html>
