@@ -5,6 +5,18 @@ var SHA512 = new Hashes.SHA512;
 const signInButton = document.querySelector("#signInButton");
 const signInGoogleButton = document.querySelector("#signInGoogleButton");
 const signIn = document.querySelector("#signIn");
+const createAccountBtn = document.querySelector("#createAccountBtn");
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('#'+burger.dataset.target);
+
+burger.addEventListener('click', (e) => {
+  burger.classList.toggle('is-active'); //displays the 'x' to close nav burger
+  nav.classList.toggle('is-active'); //displays nav-menu.is-active
+})
+
+createAccountBtn.addEventListener('click', (e) => {
+    showSignUp();
+})
 
 var googleUser;
 const signInGoogle = () => {
@@ -104,7 +116,7 @@ var password;
 const signUp = () => {
     username = document.querySelector("#username").value;
     password = document.querySelector("#password").value;
-    if (/\d/g.test(password) && /[A-Z]/g.test(password)) {
+    if (/\d/g.test(password) && /[A-Z]/g.test(password) && username!='') {
         let form = `<div class="authField">
                         <label class="label index-label has-text-left">To store passwords, please select a security question or select 'Access Key'.</label>
                         <div class="control">
@@ -150,7 +162,19 @@ const signUp = () => {
         const submitSecurityBtn = document.querySelector("#submitSecurityBtn");
         submitSecurityBtn.addEventListener('click', submitSecurity);        
     } else {
-        alert("Password must contain at least one capital letter and number.");
+        // Form Validation
+        let error = "";
+        if(username == '') {
+            error += "Please enter a username.\n";
+        }
+        if(!/\d/g.test(password) && !/[A-Z]/g.test(password)) {
+            error += "Password must contain at least one capital letter and number.";
+        } else if (!/\d/g.test(password)) {
+            error += "Password must contain at least one number.";
+        } else if (!/[A-Z]/g.test(password)) {
+            error += "Password must contain at least one capital letter.";
+        }
+        alert(error);
     }
 }
 
@@ -158,18 +182,24 @@ const submitSecurity = () => {
     console.log("security submitted!");
     const question = document.querySelector("#questions").value;
     const response = document.querySelector("#response").value;
-    const hashedResponse = SHA512.hex(response);
-    const hashedPass = SHA512.hex(password);
+    // Form Validation
+    if (question == "" && response == "") {
+        alert("Please select an option and enter your response.");
+    } else if (question == "") {
+        alert("Please select an option.");
+    } else if (response == "") {
+        alert("Please enter your resposne.")
+    } else {
+        const hashedResponse = SHA512.hex(response);
 
-    const dbRef = firebase.database().ref('users/');
-    dbRef.push({
-        security: {username: username,
-        password: hashedPass,
-        question: question,
-        response: hashedResponse}
-    })
-    alert("Success! Please log in with your username and password to continue.");
-    signInAccount();
+        const dbRef = firebase.database().ref(`users/${googleUser}`);
+        dbRef.push({
+            question: question,
+            response: hashedResponse
+        })
+        alert("Success! Please log in with your username and password to continue.");
+        signInAccount();
+    }
 }
 
 const securityGoogle = () => {
@@ -224,15 +254,24 @@ const submitSecurityGoogle = () => {
     console.log("security submitted!");
     const question = document.querySelector("#questions").value;
     const response = document.querySelector("#response").value;
-    const hashedResponse = SHA512.hex(response);
+    // Form Validation
+    if (question == "" && response == "") {
+        alert("Please select an option and enter your response.");
+    } else if (question == "") {
+        alert("Please select an option.");
+    } else if (response == "") {
+        alert("Please enter your resposne.")
+    } else {
+        const hashedResponse = SHA512.hex(response);
 
-    const dbRef = firebase.database().ref(`users/${googleUser}`);
-    dbRef.push({
-        question: question,
-        response: hashedResponse
-    })
-    alert("Success!");
-    window.location = "home.html";
+        const dbRef = firebase.database().ref(`users/${googleUser}`);
+        dbRef.push({
+            question: question,
+            response: hashedResponse
+        })
+        alert("Success!");
+        window.location = "home.html";
+    }
 }
 
 const showSignUp = () => {

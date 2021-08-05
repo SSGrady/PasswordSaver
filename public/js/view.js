@@ -37,6 +37,7 @@ submitBtn.addEventListener('click', (e) => {
 
     //check that access key contains capital letters & numbers
     //if(/\d/g.test(accessKey) && /[A-Z]/g.test(accessKey)) {
+        
         //Uses SHA512 hash with hexadecimal hash encoding
         const hashedKey = SHA512.hex(accessKey);
         // check that hashed key matches with key in database
