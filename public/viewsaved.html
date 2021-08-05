@@ -34,6 +34,9 @@
                 </div>
             </div>
         </nav>
+        <div class="content slgN has-background center" style="font-size: 34px; font-weight:700; font-family: Montserrat, sans-serif; text-align: center;">
+        savet keeps shared accounts <font color="#0d6efd"> secure</font> !
+      </div>
          <main class="has-background">
             <br>
             <br>  
@@ -42,7 +45,7 @@
                 <div class="field">
                     <label class="label">What password are you looking for?</label>
                     <div class="control">
-                        <textarea class="textarea is-primary" id="categoryInput" rows=10 autofocus></textarea>
+                        <input class="input is-primary" type="password" id="accessKeyInput"></input>
                     </div>
                     <br>
                     <div class="control">
@@ -50,7 +53,10 @@
                         <textarea class="textarea is-primary" id="accessKeyInput"></textarea>
                     </div>
                 </div>
-                <button class="button is-light is-rounded is-medium" id="submitBtn">View Password!</button>   
+                <div class="has-text-centered">
+                    <button class="button signIn-button is-light is-rounded is-medium" id="submitBtn">View Password!</button>   
+                </div>
+                <br></br>
             </div>   
         </main>
         <div class="has-text-centered title" id="display">
@@ -61,16 +67,13 @@
         <script defer src="js/view.js"></script>
       
     </body>
-    <footer class="site-footer">
+    <footer class="site-footer" style="">
         <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Safer with
-         <a class= "lgo-nm" href="#">savet</a> &copy; 2021
-            </p>
-            <p class=copyright-text>
-              Made with Bulma by Jeremy Thomas - Source Code Licensed MIT. 
-            </p>
+             <p class="copyright-text">&copy;
+                         <a class= "footer-link" href="viewsaved.html">savet </a>| Made with Bulma by Jeremy Thomas - Source Code Licensed MIT. 
+                    </p>
           </div>
         </div>
       </div>

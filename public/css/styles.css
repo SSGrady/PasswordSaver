@@ -7,15 +7,6 @@ html{
     box-sizing: inherit;
 }
 
-/* Global color vars */
-/* $darkBlue: hsl(233, 26%, 24%); */
-/* $limeGreen: hsl(136, 65%, 51%); */
-/* $brightCyan: hsl(192, 70%, 51%); */
-/* $grayishBlue: hsl(233, 8%, 62%); */
-/* $lightGrayishBlue: hsl(220, 16%, 96%); */
-/* $veryLightGray: hsl(0, 0%, 98%); */
-/* $white: hsl(0, 0%, 100%); */
-
 nav, nav::after, .navbar-item{
     background-color: #212529 !important;
     color: hsl(0,0%,98%) !important;
@@ -49,6 +40,8 @@ body{
   margin:0;
   padding: 0;
   line-height: 1.3;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 100 !important;
 }
 
 button, button:hover{
@@ -57,6 +50,8 @@ button, button:hover{
   cursor: pointer;
   background:  #0d6efd !important;
   color: hsl(0, 0%, 100%) !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 100 !important;
 }
 
 .textarea{
@@ -97,9 +92,15 @@ a.lgo-nm:hover{
     color: #0d6efd !important;
 }
 
+div.techGuy{
+    background-image: url("https://i.ibb.co/2gdHBqr/new-CSSIExhibit-A.jpg");
+    margin-left: 0;
+    margin-right: 0;
+}
+
 /* SPACER SPACER SPACER */
 :root{
---bs-blue: #0d6efd;
+    --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
     --bs-purple: #6f42c1;
     --bs-pink: #d63384;
@@ -113,10 +114,81 @@ a.lgo-nm:hover{
     --bs-gray: #6c757d;
     --bs-gray-dark: #343a40;
     --bs-primary: #0d6efd;
-    --bs-secondary: #6c757d;
+    --bs-secondary: #e9e9e9;
     --bs-success: #198754;
     --bs-info: #0dcaf0;
     --bs-warning: #ffc107;
     --bs-danger: #dc3545;
     --bs-light: #f8f9fa;
     --bs-dark: #212529;}
+
+    .auth-link{
+        background-color: white !important;
+        color: #212529;
+    }
+
+    .auth-link:hover{
+        color: #0d6efd !important;
+    }
+
+    .auth-button:hover{
+        background-color: #0d6efd !important;
+        color: white !important;
+    }
+
+    .signIn-button{
+        margin-top: 30px;
+        background-color: #212529 !important;
+    }
+
+    .signIn-button:hover{
+        background-color: #0d6efd;
+        color: white;
+    }
+
+    .authField{
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
+    .site-footer{
+        background-color: #212529;
+        color: white;
+        position: relative;
+        left:0px;
+        bottom:0px;
+        height:150px;
+        width:100%;
+    }
+
+    .footer-link, p.copyright-text{
+        background-color: #212529;
+        color: var(--bs-secondary);
+    }
+
+    .footer-link:hover{
+         color: #0d6efd;
+    }
+
+    .title, .subtitle{
+        font-family: "Montserrat", sans-serif;
+        font-weight: 100;
+    }
+
+    .label, .textarea, .input{
+        font-family: "Montserrat", sans-serif;
+        font-weight: 100;
+    }
+
+    .font{
+        font-family: "Montserrat", sans-serif;
+        font-weight: 100 !important;
+    }
+
+    #accessKeyInput{
+        border-color: transparent !important;
+    }
+
+    #accessKeyInput:hover{
+        border-color: #0d6efd !important;
+    } 

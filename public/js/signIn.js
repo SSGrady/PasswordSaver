@@ -1,4 +1,3 @@
-
 console.log("signIn.js running!");
 
 var SHA512 = new Hashes.SHA512;
@@ -20,7 +19,7 @@ const signInGoogle = () => {
             var token = credential.accessToken;
             // The signed-in user info.
             // var to store in cookies
-            var user = result.user.uid;
+            var user = result.user;
             // store in cookies
             // sessionStorage.setItem("KEY", "VALUE");
             sessionStorage.setItem("userId", user);
@@ -92,24 +91,25 @@ const signUp = () => {
 }
 
 const showSignUp = () => {
-    let form = `<div class="field">
+     let form = `<div class="authField">
                     <label class="label has-text-left">Create a Username</label>
                     <div class="control">
                         <input class="input is-medium" type="text" id="username" placeholder="username">
                     </div>
                   </div>
-                  <div class="field">
+                  <div class="authField">
                     <label class="label has-text-left">Create a Password</label>
                     <div class="control">
-                        <input class="input is-medium" type="text" id="password" placeholder="password">
+                        <input class="input is-medium" type="password" id="password" placeholder="password">
                     </div>
                   </div>
-                  <div class="control">
-                    <button id="submitSignUp" class="button is-link is-fullwidth has-text-weight-medium is-medium">Sign Up</button>
+                  <div class="authField">
+                    <div class="control">
+                        <button id="submitSignUp" class="button font signIn-button is-link is-rounded is-fullwidth has-text-weight-medium is-medium">Sign Up</button>
+                    </div>
                   </div>
-                  <br>
                   <p id="logIn" class="has-text-centered">
-                    <a id="logInButton">
+                     <a id="logInButton" class="auth-link">
                         Log In
                     </a>
                   </p>`;
@@ -121,24 +121,25 @@ const showSignUp = () => {
 }
 
 const signInAccount = () => {
-    let form = `<div class="field">
+    let form = `<div class="authField">
                     <label class="label has-text-left">Username</label>
                     <div class="control">
                         <input class="input is-medium" type="text" id="username" placeholder="username">
                     </div>
                   </div>
-                  <div class="field">
+                  <div class="authField">
                     <label class="label has-text-left">Password</label>
                     <div class="control">
-                        <input class="input is-medium" type="text" id="password" placeholder="password">
+                       <input class="input is-medium" type="password" id="password" placeholder="password">
                     </div>
                   </div>
-                  <div class="control">
-                    <button id="submitLogIn" class="button is-link is-fullwidth has-text-weight-medium is-medium">Log In</button>
+                  <div class="authField">
+                    <div class="control">
+                        <button id="submitLogIn" class="button font signIn-button is-rounded is-fullwidth has-text-weight-medium is-medium">Log In</button>
+                    </div>
                   </div>
-                  <br>
                   <p id="createAccount" class="has-text-centered">
-                    <a id="signUpButton">
+                    <a id="signUpButton" class="auth-link">
                         Create Account
                     </a>
                   </p>`;
@@ -149,5 +150,5 @@ const signInAccount = () => {
     signUpButton.addEventListener('click', showSignUp);
 }
 
-signInGoogleButton.addEventListener('click', signInGoogle);
+//signInGoogleButton.addEventListener('click', signInGoogle);
 signInButton.addEventListener('click', signInAccount);

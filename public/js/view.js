@@ -1,6 +1,6 @@
 console.log("view.js running!");
 
-var userId = sessionStorage.getItem("userId");
+var userId = sessionStorage.getItem("user");
 
 const SHA512 = new Hashes.SHA512();
 
@@ -56,4 +56,4 @@ submitBtn.addEventListener('click', (e) => {
 const displayPassword = (info) => {
     const displayDiv = document.querySelector("#display");
     displayDiv.innerHTML = info.password;
-}
+} 
