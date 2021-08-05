@@ -174,9 +174,16 @@ div.techGuy{
         color: white;
     }
 
-    .title, .subtitle{
+    .title, .subtitle, .index-link{
         font-family: "Montserrat", sans-serif;
         font-weight: 100;
+        color: white;
+        background-color: transparent !important; 
+    }
+
+    .index-link:hover{
+        font-weight: 400;
+        color: white;
     }
 
     .label, .textarea, .input{
@@ -184,15 +191,35 @@ div.techGuy{
         font-weight: 100;
     }
 
+    .index-label {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 100;
+        color: white !important;
+    }
+
     .font{
         font-family: "Montserrat", sans-serif;
         font-weight: 100 !important;
     }
 
-    #accessKeyInput{
+    .input{
         border-color: transparent !important;
     }
 
-    #accessKeyInput:hover{
+    .input:hover{
         border-color: #0d6efd !important;
+    }
+
+    /* Tinted with bg image */
+    div.hero-body{
+        background-image: url("https://i.ibb.co/2gdHBqr/new-CSSIExhibit-A.jpg"); 
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background:
+            linear-gradient(
+                rgba(33, 37, 41, 0.5),
+                rgba(33, 37, 41, 0.5)
+            ),
+            no-repeat center/cover url("https://i.ibb.co/2gdHBqr/new-CSSIExhibit-A.jpg");   
     }

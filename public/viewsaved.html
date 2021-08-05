@@ -43,11 +43,11 @@
                 <div class="field">
                     <label class="label">What password are you looking for?</label>
                     <div class="control">
-                        <textarea class="textarea is-primary" id="categoryInput" rows=10 autofocus></textarea>
+                        <textarea class="textarea is-primary" id="categoryInput" rows=4 autofocus></textarea>
                     </div>
                     <br>
                     <div class="control">
-                        <label class="label">Enter access key</label>
+                        <label class="label" id="securityQuestion"></label>
                         <input class="input is-primary" type="password" id="accessKeyInput"></input>
                     </div>
                 </div>
@@ -57,10 +57,10 @@
                 <br></br>
             </div>   
         </main>
-        <div class="has-text-centered title" id="display">
+        <div class="has-text-centered title" style="color:#212529" id="display">
 
         </div>
-    
+        <br></br>
         <script defer src="https://cdn.rawgit.com/h2non/jsHashes/master/hashes.js"></script>
         <script defer src="js/view.js"></script>
     </body>

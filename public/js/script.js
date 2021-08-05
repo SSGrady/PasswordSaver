@@ -11,7 +11,7 @@ console.log(userId);
 var SHA512 = new Hashes.SHA512;
 
 const passwordInput = document.querySelector("#passwordInput");
-const accessKeyInput = document.querySelector("#accessKeyInput");
+//const accessKeyInput = document.querySelector("#accessKeyInput");
 const categoryInput = document.querySelector("#categoryInput");
 const submitBtn = document.querySelector("#submitBtn");
 const burger = document.querySelector('.burger');
@@ -24,19 +24,19 @@ burger.addEventListener('click', (e) => {
 
 submitBtn.addEventListener('click', (e) => {
     const password = passwordInput.value;
-    const accessKey = accessKeyInput.value;
+    //const accessKey = accessKeyInput.value;
     const category = categoryInput.value;
 
     console.log(password);
-    console.log(accessKey);
+    //console.log(accessKey);
     console.log(category);
 
     //Uses SHA512 hash with hexadecimal hash encoding
-    const hashedKey = SHA512.hex(accessKey);
+    //const hashedKey = SHA512.hex(accessKey);
 
     //checks for non-empty password, category, and access key with numbers & capital letters
-    const accessHasNum = /\d/g.test(accessKey);
-    const accessHasCap = /[A-Z]/g.test(accessKey);
+    //const accessHasNum = /\d/g.test(accessKey);
+    //const accessHasCap = /[A-Z]/g.test(accessKey);
 
     let error = "";
     if (password=="") {
@@ -45,28 +45,27 @@ submitBtn.addEventListener('click', (e) => {
     if (category=="") {
         error += "Please enter a category.\n"
     }
-    if (!accessHasNum && !accessHasCap) {
+    /*if (!accessHasNum && !accessHasCap) {
         error += "Your access key must contain a capital letter and number.";
     } else if (!accessHasNum) {
         error += "Your access key must contain a number.";
     }
     else if (!accessHasCap) {
         error += "Your access key must contain a capital letter."
-    }
+    }*/
 
     console.log(error);
 
     if(error == "") {
-        console.log(hashedKey);
         console.log(userId);
         firebase.database().ref(`users/${userId}/data`).push({
             password: password,
-            accessKey: hashedKey,
+            //accessKey: hashedKey,
             category: category
         })
         //clear input fields
         passwordInput.value = "";
-        accessKeyInput.value = "";
+        //accessKeyInput.value = "";
         categoryInput.value = "";
     } else {
         alert(error);

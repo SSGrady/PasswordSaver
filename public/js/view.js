@@ -9,10 +9,24 @@ const categoryInput = document.querySelector("#categoryInput");  //may change th
 const submitBtn = document.querySelector("#submitBtn"); 
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('#'+burger.dataset.target);
+const securityQuesDiv = document.querySelector("#securityQuestion");
+const dbRef = firebase.database().ref(`users/${userId}`);
 
 burger.addEventListener('click', (e) => {
   burger.classList.toggle('is-active'); //displays the 'x' to close nav burger
   nav.classList.toggle('is-active'); //displays nav-menu.is-active
+})
+
+dbRef.on('value', (snapshot) => {
+    const userData = snapshot.val();
+    for (let key in userData) {
+        if (key != "data") {
+            const question = userData[key].question;
+            console.log(userData[key]);
+            securityQuesDiv.innerHTML = question;
+            break;
+        }
+    }
 })
 
 submitBtn.addEventListener('click', (e) => {
@@ -22,22 +36,29 @@ submitBtn.addEventListener('click', (e) => {
     console.log(accessKey);
 
     //check that access key contains capital letters & numbers
-    if(/\d/g.test(accessKey) && /[A-Z]/g.test(accessKey)) {
+    //if(/\d/g.test(accessKey) && /[A-Z]/g.test(accessKey)) {
         //Uses SHA512 hash with hexadecimal hash encoding
         const hashedKey = SHA512.hex(accessKey);
         // check that hashed key matches with key in database
-        // NOTE: this will return all passwords saved with the same access key
-        const dbRef = firebase.database().ref(`users/${userId}/data`);
         dbRef.on('value', (snapshot) => {
             let count = 0;
-            const data = snapshot.val();
-            for (let key in data) {
-                const info = data[key];
-                console.log(hashedKey);
-                console.log(info);
-                if(hashedKey == info.accessKey && category == info.category) {
-                    displayPassword(info);
-                    count ++;
+            const userData = snapshot.val();
+            for (let key in userData) {
+                if (key != "data") {
+                    if (hashedKey != userData[key].response) {
+                        alert("No matching passwords found. Try again!");
+                        accessKeyInput.value = "";
+                        categoryInput.value = "";
+                        return;
+                    }
+                } else {
+                    const info = userData[key];
+                    for (let password in info) {
+                        if(category == info[password].category) {
+                            displayPassword(info[password]);
+                            count ++;
+                        }
+                    }
                 }
             }
             // If no matches found, alert, clear inputs
@@ -48,9 +69,9 @@ submitBtn.addEventListener('click', (e) => {
             }
         })
     //form validation
-    } else {
+    /*} else {
         alert("Your access key must contain a capital letter and number");
-    }
+    }*/
 })
 
 const displayPassword = (info) => {
