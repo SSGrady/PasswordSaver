@@ -18,7 +18,7 @@
         <nav class="navbar is-primary">
             <div class="container">
                 <div class="navbar-brand">
-                <img class="cropped navbar-start" src="https://i.ibb.co/FwZvsk7/Screen-Shot-2021-08-02-at-10-55-04-PM-removebg-preview.png" alt="logo">                    
+                <img class="cropped" src="https://i.ibb.co/FwZvsk7/Screen-Shot-2021-08-02-at-10-55-04-PM-removebg-preview.png" alt="logo">                    
                     <span class="navbar-burger burger" data-target="navMenu">
                         <span></span>
                         <span></span>
@@ -26,54 +26,50 @@
                     </span>
                 </div>
                 <div id="navMenu" class="navbar-menu">
-                    <div class="navbar-end is-3">
+                    <div class="navbar-end">
                         <a href="viewsaved.html" class="navbar-item is-active center">View Saved</a>
                         <a href="home.html" class="navbar-item is-active center">Home</a>
-                        <a href="index.html" class="navbar-item is-active center">Log Out</a>
+                        <a href="index.html" class='navbar-item is-active center'>Log Out</a>
                     </div>
                 </div>
             </div>
         </nav>
-        <br>
-        <div class="content slgN has-background center" style="font-size: 34px; font-weight:700; text-align: center;">
-        What's stopping you from building the
-        <font color="#0d6efd"> password-journal of your dreams</font> ?
-      </div>
-        <main class="has-background" >
+    
+        <main class="has-background">
+            <br>
+            <br>  
 
             <div class="container">  
                 <div class="field">
-                    <label class="label">What password is this for?</label>
-                      <div class="control">
-                        <textarea class="textarea is-primary" id="categoryInput" rows=10 autofocus></textarea>
-                      </div>
-                    <br>
-                    <label class="label">Paste your password and details here</label>
+                    <label class="label">What is this password for?</label>
                     <div class="control">
-                        <textarea class="textarea is-primary" id="passwordInput" rows=10 autofocus></textarea>
+                        <textarea class="textarea is-primary" id="categoryInput" rows=4 autofocus></textarea>
                     </div>
                     <br>
+                    <label class="label">Paste your password here</label>
                     <div class="control">
-                    <label class="label">Protect with access key</label>
-                        <textarea class="textarea is-primary" id="accessKeyInput"></textarea>
+                        <input class="input is-primary" id="passwordInput" rows= autofocus></input>
                     </div>
+                    <br>
                 </div>
                 <div class="has-text-centered">
-                     <button class="button signIn-button is-light is-rounded is-medium" id="submitBtn">Save Me</button>   
+                    <button class="button signIn-button is-light is-rounded is-medium" id="submitBtn">Save Me!</button>   
                 </div>
                 <br></br>
             </div>   
         </main>
-    
+        
         <script defer src="https://cdn.rawgit.com/h2non/jsHashes/master/hashes.js"></script>
         <script defer src="js/script.js"></script>
     </body>
-    <footer class="site-footer has-background">
-        <div class="container has-background">
-        <div class="row has-background">
-             <p class="copyright-text">&copy;
-                         <a class= "footer-link" href="home.html">savet </a>| Made with Bulma by Jeremy Thomas - Source Code Licensed MIT. 
-                    </p>
+    <footer class="site-footer">
+        <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by 
+         <a class="footer-link" href="home.html">savet</a>. Made with Bulma by Jeremy Thomas - Source Code Licensed MIT. 
+            </p>
+          </div>
         </div>
       </div>
 </footer>

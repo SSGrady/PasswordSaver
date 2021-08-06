@@ -19,15 +19,21 @@
     <nav class="navbar is-primary">
         <div class="container">
             <div class="navbar-brand">
-                <img class="cropped" src="https://i.ibb.co/FwZvsk7/Screen-Shot-2021-08-02-at-10-55-04-PM-removebg-preview.png" alt="logo">                 
-                <!-- Burger was here. (we don't need it bc before user can access nav-burger they must sign in.) -->
+                <img class="cropped" src="https://i.ibb.co/FwZvsk7/Screen-Shot-2021-08-02-at-10-55-04-PM-removebg-preview.png" alt="logo">                    
+                <span class="navbar-burger burger" data-target="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
             </div>
+            <div id="navMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a id="createAccountBtn" href="#" class='navbar-item is-active center'>Create Account</a>
+                    </div>
+                </div>
         </div>
     </nav>
-         <img src="https://i.ibb.co/2gdHBqr/new-CSSIExhibit-A.jpg" alt="imgTemp" style="display:block; width: 100%;height:500px;">
-<div class="content slgN has-background center" style="font-size: 34px; font-weight:700; font-family: Montserrat, sans-serif; text-align: center;">
-        Realize your password <font color="#0d6efd"> security</font> with savet!
-      </div>
+    <!--<img src="https://i.ibb.co/2gdHBqr/new-CSSIExhibit-A.jpg" alt="imgTemp" style="display:block; width: 100%;height:500px;">-->    
     <section class="hero is-fullheight is-default is-bold">
         <div class="hero-body">
             <div class="container has-text-centered">
@@ -45,7 +51,7 @@
                                 Sign In
                             </a>
                             <br></br>
-                            <a id="signInGoogleButton" class="has-background-white auth-link">
+                            <a id="signInGoogleButton" class="index-link">
                                 Or, sign in with Google
                             </a>
                         </p>
@@ -61,8 +67,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-sm-6 col-xs-12">
-                    <p class="copyright-text">&copy;
-                         <a class= "footer-link" href="index.html">savet </a>| Made with Bulma by Jeremy Thomas - Source Code Licensed MIT. 
+                    <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by 
+                         <a class= "footer-link" href="index.html">savet</a>. Made with Bulma by Jeremy Thomas - Source Code Licensed MIT. 
                     </p>
                 </div>
             </div>
